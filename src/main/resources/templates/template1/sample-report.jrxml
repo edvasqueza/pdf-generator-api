@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SampleReport" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68271dde-6bcd-4fe3-b393-0fca2b529f0c">
+	<parameter name="name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="30" uuid="28899ac8-651c-44c5-a640-8aaa368f6a67"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sample Report Title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="158" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="30" uuid="d84ff5e9-451c-4ade-932f-b3cfdc61faa4"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="10" width="455" height="30" uuid="e4d404c2-c4b2-489f-acf0-48a6adb0fa13"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="52" width="100" height="30" uuid="f36d8caf-c8c4-4aca-8b19-b5e32523894e"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Editable text]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="52" width="455" height="48" uuid="3da72cb9-d7a7-4168-bc38-f0cd5c90c630">
+					<property name="net.sf.jasperreports.export.pdf.field.type" value="Text"/>
+					<property name="net.sf.jasperreports.export.pdf.field.text.multiline" value="true"/>
+					<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+					<propertyExpression name="net.sf.jasperreports.export.pdf.field.value"><![CDATA["This\nis a multi\nline text inside a single line text field."]]></propertyExpression>
+				</reportElement>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
