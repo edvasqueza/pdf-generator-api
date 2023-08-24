@@ -1,24 +1,24 @@
-# PdfGeneratorApi
+# PDF Generator API
 
-The PDF Generation API is a Rest service that allows users to dynamically generate PDF documents based on provided templates and data.
-The API is built using Spring Boot and provides endpoints for generating PDFs with customizable content.
+The PDF Generator API is a REST service designed to dynamically create PDF documents using templates and data provided by users. Built with Spring Boot, this API offers endpoints for generating customizable PDFs.
 
 ## Features
 
-- Flexible PDF Generation: Generate PDF documents using customizable templates (Jasper) and dynamic data inputs.
-- Content Customization: Populate PDF templates with dynamic data, enabling personalized and data-driven PDF generation.
-- Content Delivery Options: Choose between receiving the generated PDF as a streamed response or a Base64-encoded string, based on the client's preference.
-- Content Negotiation: The API serves content in the desired format based on the client's Accept header, making it easy to integrate with various client applications.
+- **Flexible PDF Generation**: Create PDF documents by leveraging customizable templates (Jasper) and dynamic data inputs.
+- **Content Customization**: Populate PDF templates with dynamic data, enabling personalized and data-driven PDF generation.
+- **Content Delivery Options**: Select between receiving the generated PDF as a streamed response or a Base64-encoded string, based on client preferences.
+- **Content Negotiation**: The API serves content in the desired format, as indicated by the client's Accept header, facilitating seamless integration with diverse client applications.
+- **Compression**: The response can be compressed based on the request's Accept-Encoding header.
 
 ## Endpoints
 
-**Generate PDF**
+### Generate PDF
 
-    POST /api/pdf
+**Endpoint**: `POST /api/pdf`
 
-This endpoint allows clients to generate PDF documents using provided data inputs and template references.
+This endpoint enables clients to generate PDF documents using provided data inputs and template references.
 
-Request:
+**Request**:
 
 ```javascript
 {
@@ -29,20 +29,30 @@ Request:
     } // JSON data to populate the template
 }
 ```
-Response:
+**Response**:
 
-- If the client's Accept header indicates text/plain, a Base64-encoded PDF is returned.
-- If the client's Accept header indicates application/pdf, a PDF document is streamed as the response.
+- If the client's Accept header specifies text/plain, a Base64-encoded PDF is returned.
+- If the client's Accept header specifies application/pdf, a PDF document is streamed as the response.
 
-## Run the project
+## Getting Started
 
 Requirements:
+
 - Java 11
 
-Run `./mvnw clean install`
+To run the project:
 
-Run `./mvnw spring-boot:run`
+- Clone the repository.
+- Navigate to the project directory.
+- Run the following commands:
+
+```shell
+./mvnw clean install
+./mvnw spring-boot:run
+```
+
+This will build and run the project, making the API accessible.
 
 ## Future Enhancements
 
-Caching and Compression: Incorporate caching strategies and content compression techniques to further optimize data transfer and reduce network latency.
+- Retrieve templates from a blob store using cloud providers.
